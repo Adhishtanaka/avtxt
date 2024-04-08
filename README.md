@@ -12,21 +12,22 @@ npm install avtxt
 
 ## Usage 
 
+avtxt npm package supports both commonjs & esm approach.
+
 ### Example 1
 
 ```javascript
 import generateSvg from 'avtxt'
 //const generateSvg = require('avtxt'); 
 
-// Example usage
 const svgContent = generateSvg({
-  name: 'John Doe',
+  name: 'Thiramithu Kulasooriya',
   round: true,
   size: 100,
   fontSize: 40,
   bgColor: '#007bff',
   textColor: '#ffffff',
-  caseType: 'default', // or 'simple' or 'pascal'
+  caseType: 'simple', 
   random: false
 });
 
@@ -69,7 +70,7 @@ function App() {
   const [svgContent, setSvgContent] = useState(null);
 
   useEffect(() => {
-    setSvgContent(generateSvg({ name: "John Doe", round: true, size: 100, textSize: 40, random: "true", caseType: "pascal" }));
+    setSvgContent(generateSvg({ name: "Thiramithu Kulasooriya", round: true, size: 100, textSize: 40, random: "true", caseType: "pascal" }));
   }, []);
 
   const svgDataUri = svgContent ? `data:image/svg+xml;base64,${btoa(svgContent)}` : null;
@@ -95,7 +96,7 @@ export default App;
 - fontSize (number, optional): The font size of the initials in pixels. Default is 28.
 - bgColor (string, optional): The background color of the avatar in hexadecimal format. Default is #ddd.
 - textColor (string, optional): The color of the initials in hexadecimal format. Default is #222.
-- caseType (string, optional): The casing type for initials. Options are 'default', 'simple', or 'pascal'. Default is 'default'.
+- caseType (string, optional): The casing type for initials. Options are 'simple', or 'pascal'. Default is upperCase.
 - random (boolean, optional): Determines whether to use randomly generated contrasting colors for the avatar. Default is false.
 
 ## License

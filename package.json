@@ -1,6 +1,6 @@
 {
   "name": "avtxt",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "avtxt is a simple Node.js library for generating avatars with initials from names using SVG. It allows you to create customizable avatars for user profiles, chat applications, and more.",
   "main": "./dist/cjs/index.js", 
   "module": "./dist/mjs/index.js",
@@ -21,5 +21,9 @@
     "svg"
   ],
   "author": "Adhishtanaka",
-  "license": "MIT"
+  "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/Adhishtanaka/avtxt/issues",
+      "email": "kulasoooriyaa@gmail.com"
+    }
 }

@@ -1,0 +1,19 @@
+{
+  "name": "avtxt",
+  "version": "1.0.0",
+  "description": "avtxt is an npm package for generating SVG images dynamically based on user input.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "avatar",
+    "placeholder",
+    "text"
+  ],
+  "author": "Adhishtanaka",
+  "license": "MIT"
+}

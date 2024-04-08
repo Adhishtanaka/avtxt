@@ -41,4 +41,4 @@ const generateSvg = (query) => {
   return svgContent;
 };
 
-export default generateSvg;
+module.exports = generateSvg;

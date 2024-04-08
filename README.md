@@ -15,8 +15,8 @@ npm install avtxt
 ### Example 1
 
 ```javascript
-
-const generateSvg = require('avtxt');
+import generateSvg from 'avtxt'
+//const generateSvg = require('avtxt'); 
 
 // Example usage
 const svgContent = generateSvg({
@@ -36,8 +36,12 @@ console.log(svgContent);
 ### Example 2
 
 ```javascript
-const generateSvg = require('avtxt');
-const express = require("express");
+import generateSvg from 'avtxt'
+import express from "express"
+
+//const generateSvg = require('avtxt');
+//const express = require("express");
+
 const app = express();
 const port = 3000;
 
@@ -53,7 +57,35 @@ app.get("/", (req, res) => {
   
 ```
 
-![image](screenshot/s1.png)
+![image](screenshot/s1.webp)
+
+### Example 3
+
+```jsx
+import React, { useState, useEffect } from "react";
+import generateSvg from "avtxt";
+
+function App() {
+  const [svgContent, setSvgContent] = useState(null);
+
+  useEffect(() => {
+    setSvgContent(generateSvg({ name: "John Doe", round: true, size: 100, textSize: 40, random: "true", caseType: "pascal" }));
+  }, []);
+
+  const svgDataUri = svgContent ? `data:image/svg+xml;base64,${btoa(svgContent)}` : null;
+
+  return (
+    <>
+      {svgContent && (
+        <img src={svgDataUri} alt="Generated SVG" />
+      )}
+    </>
+  );
+}
+
+export default App;
+
+```
 
 ## Parameters
 

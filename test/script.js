@@ -1,4 +1,4 @@
-const generateSvg = require('../index.js');
+const generateSvg = require('../dist/cjs/index.js')
 
 function compareStrings(str1, str2) {
     if (str1 === str2) {
@@ -18,6 +18,7 @@ const svgContent = generateSvg({
     caseType: 'default',
     random: false
 }).replace(/\s/g, ''); 
+
 
 const output = `
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100px" height="100px" viewBox="0 0 100 100" version="1.1">      

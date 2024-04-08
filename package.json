@@ -1,7 +1,7 @@
 {
   "name": "avtxt",
   "version": "1.0.0",
-  "description": "avtxt is an npm package for generating SVG images dynamically based on user input.",
+  "description": "avtxt is a simple Node.js library for generating avatars with initials from names using SVG. It allows you to create customizable avatars for user profiles, chat applications, and more.",
   "main": "index.js",
   "directories": {
     "lib": "lib"

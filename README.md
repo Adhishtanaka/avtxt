@@ -9,6 +9,11 @@ You can install avtxt via npm:
 ```bash
 npm install avtxt
 ```
+or using cdn server
+
+```javascript
+import generateSvg from "https://cdn.jsdelivr.net/gh/Adhishtanaka/avtxt@main/dist/mjs/index.js";
+```
 
 ## Usage 
 
@@ -37,11 +42,11 @@ console.log(svgContent);
 ### Example 2
 
 ```javascript
-import generateSvg from 'avtxt'
-import express from "express"
+//import generateSvg from 'avtxt'
+//import express from "express"
 
-//const generateSvg = require('avtxt');
-//const express = require("express");
+const generateSvg = require('avtxt');
+const express = require("express");
 
 const app = express();
 const port = 3000;
@@ -63,30 +68,37 @@ app.get("/", (req, res) => {
 ### Example 3
 
 ```jsx
-import React, { useState, useEffect } from "react";
-import generateSvg from "avtxt";
+import { useState, useEffect } from "react";
+import generateSvg from "https://cdn.jsdelivr.net/gh/Adhishtanaka/avtxt@main/dist/mjs/index.js";
 
-function App() {
+function AvatarImage() {
   const [svgContent, setSvgContent] = useState(null);
 
   useEffect(() => {
-    setSvgContent(generateSvg({ name: "Thiramithu Kulasooriya", round: true, size: 100, textSize: 40, random: "true", caseType: "pascal" }));
+    setSvgContent(
+      generateSvg({
+        name: "Thiramithu Kulasooriya",
+        round: true,
+        size: 100,
+        textSize: 40,
+        random: "true",
+        caseType: "pascal",
+      })
+    );
   }, []);
 
-  const svgDataUri = svgContent ? `data:image/svg+xml;base64,${btoa(svgContent)}` : null;
+  const svgDataUri = svgContent
+    ? `data:image/svg+xml;base64,${btoa(svgContent)}`
+    : null;
 
-  return (
-    <>
-      {svgContent && (
-        <img src={svgDataUri} alt="Generated SVG" />
-      )}
-    </>
-  );
+  return <>{svgContent && <img src={svgDataUri} alt="Generated SVG" />}</>;
 }
 
-export default App;
+export default AvatarImage;
 
 ```
+
+![image](screenshot/s2.webp)
 
 ## Parameters
 

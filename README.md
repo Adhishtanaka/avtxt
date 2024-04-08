@@ -12,6 +12,8 @@ npm install avtxt
 
 ## Usage 
 
+### Example 1
+
 ```javascript
 
 const generateSvg = require('avtxt');
@@ -30,6 +32,29 @@ const svgContent = generateSvg({
 
 console.log(svgContent);
 ```
+
+### Example 2
+
+```javascript
+const generateSvg = require('avtxt');
+const express = require("express");
+const app = express();
+const port = 3000;
+
+app.get("/", (req, res) => {
+    const qu = req.query;
+    const svgContent = generateSvg(qu);
+    res.setHeader("Content-Type", "image/svg+xml");
+    res.send(svgContent);
+});
+  app.listen(port, () => {
+    console.log("listening");
+  });
+  
+```
+
+![image](screenshot/s1.png)
+
 ## Parameters
 
 - name (string, required): The name used to generate the initials.

@@ -12,12 +12,12 @@ npm install avtxt
 or using cdn server
 
 ```javascript
-import generateSvg from "https://cdn.jsdelivr.net/gh/Adhishtanaka/avtxt@main/dist/mjs/index.js";
+import generateSvg from "https://cdn.jsdelivr.net/gh/Adhishtanaka/avtxt@main/dist/index.js";
 ```
 
 ## Usage 
 
-avtxt npm package supports both commonjs & esm approach.
+avtxt npm package supports only esm approach.
 
 ### Example 1
 
@@ -41,35 +41,9 @@ console.log(svgContent);
 
 ### Example 2
 
-```javascript
-//import generateSvg from 'avtxt'
-//import express from "express"
-
-const generateSvg = require('avtxt');
-const express = require("express");
-
-const app = express();
-const port = 3000;
-
-app.get("/", (req, res) => {
-    const qu = req.query;
-    const svgContent = generateSvg(qu);
-    res.setHeader("Content-Type", "image/svg+xml");
-    res.send(svgContent);
-});
-  app.listen(port, () => {
-    console.log("listening");
-  });
-  
-```
-
-![image](screenshot/s1.webp)
-
-### Example 3
-
 ```jsx
 import { useState, useEffect } from "react";
-import generateSvg from "https://cdn.jsdelivr.net/gh/Adhishtanaka/avtxt@main/dist/mjs/index.js";
+import generateSvg from 'avtxt'
 
 function AvatarImage() {
   const [svgContent, setSvgContent] = useState(null);
